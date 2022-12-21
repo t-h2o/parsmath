@@ -17,3 +17,14 @@
 |stem:[x + (5 * y)]
 |stem:[(x + 5) * y]
 |===
+
+* Associativity
++
+[cols="1,1,1"]
+|===
+|Input |Correct |Error
+
+|stem:[7 - 3 + 2]
+|stem:[(7 - 3) + 2]
+|stem:[7 - (3 + 2)]
+|===
