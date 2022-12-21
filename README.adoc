@@ -2,3 +2,5 @@
 :nofooter:
 :sectnums:
 :toc: left
+:stylesheet: assets/my-stylesheet.css
+:stem:
