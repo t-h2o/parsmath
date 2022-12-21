@@ -4,3 +4,16 @@
 :toc: left
 :stylesheet: assets/my-stylesheet.css
 :stem:
+
+== grammar
+
+* Precedence
++
+[cols="1,1,1"]
+|===
+|Input |Correct |Error
+
+|stem:[x + 5 * y]
+|stem:[x + (5 * y)]
+|stem:[(x + 5) * y]
+|===
