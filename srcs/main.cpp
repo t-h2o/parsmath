@@ -1,4 +1,5 @@
 #include "Add.hpp"
+#include "Number.hpp"
 #include "color.hpp"
 #include <iostream>
 
@@ -7,7 +8,8 @@ main(void)
 {
 	title("Parsmath");
 
-	Add sum;
+	Add	   sum;
+	Number number;
 
 	return 0;
 }

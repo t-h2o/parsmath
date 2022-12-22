@@ -176,8 +176,14 @@ abstract Infix {
   TreeNode	*right;
 }
 class Add
+class Number {
+  int	_number;
+  +void set_number(int);
+  +int eval(void);
+}
 
 TreeNode <|-- Infix
+TreeNode <|-- Number
 Infix <|-- Add
 
 @enduml
