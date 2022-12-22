@@ -13,6 +13,13 @@ class Add : public Infix
 	{
 		return this->_left->eval() + this->_right->eval();
 	}
+
+	void
+	print(void)
+	{
+		std::cout << this->get_left() << " + " << this->get_right()
+				  << std::endl;
+	}
 };
 
 std::ostream &

@@ -12,6 +12,7 @@ test(void)
 	std::cout << sum->eval() << std::endl;
 
 	std::cout << *(static_cast<Add *>(sum));
+	sum->print();
 	delete sum;
 }
 
