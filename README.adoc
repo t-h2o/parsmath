@@ -60,5 +60,16 @@ variable:: nextToken
 
 OOP:: Object-Oriented Programming
 +
-image:assets/class_integer.svg[Token: integer]
-image:assets/class_id.svg[Token: integer]
+The superclass `tree node`:
++
+image::assets/abstract_treenode.svg[Abstract: tree node]
++
+Subclasses:
++
+image:assets/class_add.svg[Class: add]
+image:assets/class_subtract.svg[Class: subtract]
+image:assets/class_mult.svg[Class: mult]
+image:assets/class_div.svg[Class: div]
+image:assets/class_negate.svg[Class: negate]
+image:assets/class_integer.svg[Class: integer]
+image:assets/class_id.svg[Class: id]

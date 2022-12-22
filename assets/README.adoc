@@ -52,3 +52,63 @@ class Id {
 
 @enduml
 ....
+
+[plantuml, target=abstract_treenode, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+abstract TreeNode
+
+@enduml
+....
+
+[plantuml, target=class_add, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class add
+
+@enduml
+....
+
+[plantuml, target=class_subtract, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class subtract
+
+@enduml
+....
+
+[plantuml, target=class_mult, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class mult
+
+@enduml
+....
+
+[plantuml, target=class_div, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class  div
+
+@enduml
+....
+
+[plantuml, target=class_negate, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class negate
+
+@enduml
+....
