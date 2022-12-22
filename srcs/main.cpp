@@ -10,6 +10,8 @@ test(void)
 	sum->set_left(32);
 	sum->set_right(10);
 	std::cout << sum->eval() << std::endl;
+
+	std::cout << *sum;
 	delete sum;
 }
 

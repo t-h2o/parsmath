@@ -172,6 +172,8 @@ skinparam defaultFontName JetBrains Mono
 
 abstract TreeNode {
   +{abstract} int eval(void) = 0;
+  .. operator << ..
+  std::cout << node.eval();
 }
 abstract Infix {
   .. members ..
