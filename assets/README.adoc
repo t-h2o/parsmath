@@ -1,6 +1,44 @@
 = Assets
 :nofooter:
 
+[plantuml, target=tree_example, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+left to right direction
+' Horizontal lines: -->, <--, <-->
+' Vertical lines: ->, <-, <->
+
+map Mult {
+}
+
+map Subtract {
+}
+
+map 2 {
+}
+
+map Add {
+}
+
+map x {
+}
+
+map 5 {
+}
+
+Mult --> Subtract
+Mult --> 2
+
+Subtract --> Add
+
+Add --> x
+Add --> 5
+
+@enduml
+....
+
 [plantuml, target=token_id, format=svg, width=100%]
 ....
 @startuml

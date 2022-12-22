@@ -62,6 +62,10 @@ OOP:: Object-Oriented Programming
 
 === Tree
 
+Tree example with: stem:[-(x + 5) * 2]
+
+image::assets/tree_example.svg[tree example]
+
 The superclass `tree node`:
 
 image::assets/abstract_treenode.svg[Abstract: tree node]
