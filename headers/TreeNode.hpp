@@ -5,7 +5,7 @@
 class TreeNode
 {
   public:
-	virtual ~TreeNode(void){};
+	virtual ~TreeNode(void) {}
 	virtual int	 eval(void) = 0;
 	virtual void print(void) = 0;
 };
