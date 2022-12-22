@@ -68,7 +68,7 @@ abstract TreeNode
 @startuml
 skinparam defaultFontName JetBrains Mono
 
-class add {
+class Add {
   treeNode	*left;
   treeNode	*right;
 }
@@ -81,7 +81,7 @@ class add {
 @startuml
 skinparam defaultFontName JetBrains Mono
 
-class subtract {
+class Subtract {
   treeNode	*left;
   treeNode	*right;
 }
@@ -94,7 +94,7 @@ class subtract {
 @startuml
 skinparam defaultFontName JetBrains Mono
 
-class mult {
+class Mult {
   treeNode	*left;
   treeNode	*right;
 }
@@ -107,7 +107,7 @@ class mult {
 @startuml
 skinparam defaultFontName JetBrains Mono
 
-class  div {
+class  Div {
   treeNode	*left;
   treeNode	*right;
 }
@@ -120,7 +120,7 @@ class  div {
 @startuml
 skinparam defaultFontName JetBrains Mono
 
-class negate {
+class Negate {
   treeNode	*arg;
 }
 
