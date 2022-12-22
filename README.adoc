@@ -46,3 +46,7 @@ F:: Factor
 * ID
 +
 image::assets/token_id.svg[Token: ID]
+
+* integer
++
+image::assets/token_integer.svg[Token: integer]
