@@ -59,17 +59,25 @@ Scans the input and sets nextToken to point to the newly scanned token.
 variable:: nextToken
 
 OOP:: Object-Oriented Programming
-+
+
+=== Tree
+
 The superclass `tree node`:
-+
+
 image::assets/abstract_treenode.svg[Abstract: tree node]
-+
-Subclasses:
-+
+
+Infix operators:
+
 image:assets/class_add.svg[Class: add]
 image:assets/class_subtract.svg[Class: subtract]
 image:assets/class_mult.svg[Class: mult]
 image:assets/class_div.svg[Class: div]
+
+Prefix unary operators:
+
 image:assets/class_negate.svg[Class: negate]
+
+others:
+
 image:assets/class_integer.svg[Class: integer]
 image:assets/class_id.svg[Class: id]
