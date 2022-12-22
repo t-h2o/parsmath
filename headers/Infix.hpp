@@ -26,6 +26,18 @@ class Infix : public TreeNode
 		this->_right = new Number(number);
 	}
 
+	TreeNode &
+	get_left(void)
+	{
+		return *(this->_left);
+	}
+
+	TreeNode &
+	get_right(void)
+	{
+		return *(this->_right);
+	}
+
   protected:
 	TreeNode *_left;
 	TreeNode *_right;

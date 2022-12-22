@@ -181,6 +181,8 @@ abstract Infix {
   .. public ..
   +void set_left(int);
   +void set_right(int);
+  +TreeNode &get_left(void);
+  +TreeNode &get_right(void);
   .. protected ..
   TreeNode	*left;
   TreeNode	*right;
