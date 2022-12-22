@@ -8,7 +8,7 @@ class Infix : public TreeNode
   public:
 	virtual ~Infix(void){};
 
-  private:
+  protected:
 	TreeNode *_left;
 	TreeNode *_right;
 };
