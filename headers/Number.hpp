@@ -21,6 +21,12 @@ class Number : public TreeNode
 		_number = number;
 	}
 
+	void
+	print(void)
+	{
+		std::cout << this->_number;
+	}
+
   private:
 	int _number;
 };

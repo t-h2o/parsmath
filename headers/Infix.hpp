@@ -37,7 +37,6 @@ class Infix : public TreeNode
 	{
 		return *(this->_right);
 	}
-	virtual void print(void) = 0;
 
   protected:
 	TreeNode *_left;

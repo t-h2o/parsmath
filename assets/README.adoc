@@ -171,7 +171,9 @@ class Negate {
 skinparam defaultFontName JetBrains Mono
 
 abstract TreeNode {
+  .. public ..
   +{abstract} int eval(void) = 0;
+  +{abstract} void print(void) = 0;
   .. operator << ..
   std::cout << node.eval();
 }
@@ -194,15 +196,19 @@ end note
 class Add {
   .. public ..
   +int eval(void);
+  +void print(void);
 }
 note right of Add::eval
   left->eval() + right->eval()
 end note
 
 class Number {
-  int	_number;
+  .. public ..
+  +void print(void);
   +void set_number(int);
   +int eval(void);
+  .. private ..
+  int	_number;
 }
 
 TreeNode <|-- Infix
