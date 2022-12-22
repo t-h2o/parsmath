@@ -1,0 +1,15 @@
+= Assets
+
+[plantuml, target=token_id, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+[*] --> ID
+ID --> [*]
+ID : char { char, digit, '-' } 
+
+ID -> ID
+
+@enduml
+....

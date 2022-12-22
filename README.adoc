@@ -5,7 +5,7 @@
 :stylesheet: assets/my-stylesheet.css
 :stem:
 
-== grammar
+== Examples input
 
 * Precedence
 +
@@ -28,3 +28,21 @@
 |stem:[(7 - 3) + 2]
 |stem:[7 - (3 + 2)]
 |===
+
+== Grammar for expressions
+
+E:: Expression
+T:: Term
+F:: Factor
+
+=== Variations
+
+* stem:[E -> T + E | T - E | T]
+* stem:[T -> F * T | F / T | F]
+* stem:[F -> ID | "Integers" | (E) - F]
+
+=== Tokens
+
+* ID
++
+image::assets/token_id.svg[Token: ID]
