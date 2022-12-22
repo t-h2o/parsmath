@@ -9,9 +9,7 @@ test(void)
 	Infix *sum = new Add();
 	sum->set_left(32);
 	sum->set_right(10);
-	std::cout << sum->eval() << std::endl;
 
-	std::cout << *(static_cast<Add *>(sum));
 	sum->print();
 	delete sum;
 }
