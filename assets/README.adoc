@@ -170,7 +170,9 @@ class Negate {
 @startuml
 skinparam defaultFontName JetBrains Mono
 
-abstract TreeNode
+abstract TreeNode {
+  +{abstract} int eval(void) = 0;
+}
 abstract Infix {
   TreeNode	*left;
   TreeNode	*right;

@@ -3,13 +3,19 @@
 #include "color.hpp"
 #include <iostream>
 
+static void
+test(void)
+{
+	TreeNode *tree = new Add();
+	delete tree;
+}
+
 int
 main(void)
 {
 	title("Parsmath");
 
-	Add	   sum;
-	Number number;
+	test();
 
 	return 0;
 }

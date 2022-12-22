@@ -7,6 +7,12 @@ class Add : public Infix
 {
   public:
 	~Add(void){};
+
+	int
+	eval(void)
+	{
+		return 0;
+	}
 };
 
 #endif /* ADD_HPP */
