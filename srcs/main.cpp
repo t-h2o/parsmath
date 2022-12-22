@@ -11,7 +11,7 @@ test(void)
 	sum->set_right(10);
 	std::cout << sum->eval() << std::endl;
 
-	std::cout << *sum;
+	std::cout << *(static_cast<Add *>(sum));
 	delete sum;
 }
 
