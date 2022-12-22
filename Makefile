@@ -27,6 +27,9 @@ SRCS	+=	$(SRCD)/color.cpp
 
 INCD	=	headers
 
+INCS	=	$(INCD)/TreeNode.hpp
+INCS	+=	$(INCD)/Infix.hpp
+INCS	+=	$(INCD)/Add.hpp
 
 #	Objets
 
@@ -67,7 +70,7 @@ db: all
 	$(DB) $(NAME)
 
 format:
-	clang-format -i $(SRCS) $(INCS) $(TEMS)
+	clang-format -i $(SRCS) $(INCS)
 
 
 diagram:

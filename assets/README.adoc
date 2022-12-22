@@ -164,3 +164,21 @@ class Negate {
 
 @enduml
 ....
+
+[plantuml, target=program_class, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+abstract TreeNode
+abstract Infix {
+  TreeNode	*left;
+  TreeNode	*right;
+}
+class Add
+
+TreeNode <|-- Infix
+Infix <|-- Add
+
+@enduml
+....

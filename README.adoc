@@ -85,3 +85,9 @@ others:
 
 image:assets/class_integer.svg[Class: integer]
 image:assets/class_id.svg[Class: id]
+
+== Program
+
+=== Classes
+
+image:assets/program_class.svg[Class into the program]
