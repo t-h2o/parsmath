@@ -28,3 +28,27 @@ integer -> integer
 
 @enduml
 ....
+
+[plantuml, target=class_integer, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class Integer {
+  int 457
+}
+
+@enduml
+....
+
+[plantuml, target=class_id, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class Id {
+  string "value"
+}
+
+@enduml
+....

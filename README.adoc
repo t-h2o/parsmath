@@ -50,3 +50,15 @@ image::assets/token_id.svg[Token: ID]
 * integer
 +
 image::assets/token_integer.svg[Token: integer]
+
+=== Lexical analysis
+
+code:: function `scanToken()`
++
+Scans the input and sets nextToken to point to the newly scanned token.
+variable:: nextToken
+
+OOP:: Object-Oriented Programming
++
+image:assets/class_integer.svg[Token: integer]
+image:assets/class_id.svg[Token: integer]
