@@ -174,11 +174,27 @@ abstract TreeNode {
   +{abstract} int eval(void) = 0;
 }
 abstract Infix {
+  .. members ..
+  +~Infix(void);
+  .. public ..
+  +void set_left(int);
+  +void set_right(int);
   .. protected ..
   TreeNode	*left;
   TreeNode	*right;
 }
-class Add
+note right of Infix::~Infix
+  Free left and right tree nodes
+end note
+
+class Add {
+  .. public ..
+  +int eval(void);
+}
+note right of Add::eval
+  left->eval() + right->eval()
+end note
+
 class Number {
   int	_number;
   +void set_number(int);

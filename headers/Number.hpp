@@ -6,6 +6,7 @@
 class Number : public TreeNode
 {
   public:
+	Number(int const &number) : _number(number){};
 	~Number(void){};
 
 	int

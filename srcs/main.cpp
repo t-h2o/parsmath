@@ -6,8 +6,11 @@
 static void
 test(void)
 {
-	TreeNode *tree = new Add();
-	delete tree;
+	Infix *sum = new Add();
+	sum->set_left(32);
+	sum->set_right(10);
+	std::cout << sum->eval() << std::endl;
+	delete sum;
 }
 
 int

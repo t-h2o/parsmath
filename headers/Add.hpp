@@ -11,7 +11,7 @@ class Add : public Infix
 	int
 	eval(void)
 	{
-		return 0;
+		return this->_left->eval() + this->_right->eval();
 	}
 };
 
