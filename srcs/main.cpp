@@ -4,38 +4,37 @@
 #include "color.hpp"
 #include <cctype>
 #include <iostream>
-#include <stdlib.h>
 
 static TreeNode *
-create_token(char **str)
+create_token(Input &exp)
 {
 	int number;
 
-	while (isspace(**str))
-		++(*str);
+	while (isspace(exp.getChar()))
+		exp.incIndex();
 
-	if (isdigit(**str))
+	if (isdigit(exp.getChar()))
 	{
-		number = atoi(*str);
-		while (isdigit(**str))
-			++(*str);
+		number = exp.getNumber();
+		while (isdigit(exp.getChar()))
+			exp.incIndex();
 		return new Number(number);
 	}
-	if (**str == '+')
+	if (exp.getChar() == '+')
 	{
-		++(*str);
+		exp.incIndex();
 		return new Add();
 	}
 	return 0;
 }
 
 static int
-qwer(TreeNode **parent, char **str, TreeNode **number)
+qwer(TreeNode **parent, Input &exp, TreeNode **number)
 {
 	TreeNode *operation;
 
-	*number = create_token(str);
-	operation = create_token(str);
+	*number = create_token(exp);
+	operation = create_token(exp);
 
 	if (operation == 0)
 		return 1;
@@ -50,18 +49,18 @@ qwer(TreeNode **parent, char **str, TreeNode **number)
 }
 
 static void
-test_sum(char *str)
+test_sum(Input exp)
 {
 	TreeNode *tree;
 	TreeNode *next;
 	TreeNode *number;
 
-	message(str);
+	message(exp.getInput().c_str());
 	tree = 0;
-	if (qwer(&tree, &str, &number) == 2)
+	if (qwer(&tree, exp, &number) == 2)
 	{
 		next = tree;
-		while (qwer(&next, &str, &number) == 2)
+		while (qwer(&next, exp, &number) == 2)
 			;
 	}
 	else
@@ -88,13 +87,13 @@ main(int argc, char **argv)
 		std::cout << input.getChar();
 		std::cout << input.getChar();
 		std::cout << input.getChar();
+		std::cout << input.getInput();
 		return (0);
 	}
 	title("Sum");
-	test_sum((char *)"1 + 2");
-	test_sum((char *)"1 + 2 + 3 + 4");
-	test_sum((char *)"1 + 2 + 3 + 4 + 5");
-	test_sum((char *)"1 + 2 + 3 + 4 + 5 + 6");
+	test_sum("1 + 2 + 3 + 4");
+	test_sum("1 + 2 + 3 + 4 + 5");
+	test_sum("1 + 2 + 3 + 4 + 5 + 6");
 
 	return 0;
 }
