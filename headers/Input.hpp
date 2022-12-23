@@ -11,6 +11,8 @@ class Input
 
 	char getChar(void);
 
+	std::string &getInput(void);
+
   private:
 	std::string _input;
 	size_t		_index;

@@ -16,3 +16,9 @@ Input::getChar(void)
 
 	return this->_input[_index++];
 }
+
+std::string &
+Input::getInput(void)
+{
+	return this->_input;
+}
