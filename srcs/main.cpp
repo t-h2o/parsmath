@@ -29,7 +29,7 @@ create_token(char **str)
 }
 
 static void
-test_sum(char *str)
+test_sum_2(char *str)
 {
 	TreeNode *number;
 	TreeNode *sum;
@@ -55,9 +55,9 @@ main(void)
 {
 	title("Parsmath");
 
-	test_sum((char *)"1 + 2");
-	test_sum((char *)"42 + 34");
-	test_sum((char *)"123456+654321");
+	test_sum_2((char *)"1 + 2");
+	test_sum_2((char *)"42 + 34");
+	test_sum_2((char *)"123456+654321");
 
 	return 0;
 }
