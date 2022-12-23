@@ -7,7 +7,8 @@ class Input
 {
   public:
 	Input(char **);
-	Input(char *);
+	Input(char const *);
+	Input(std::string const &);
 
 	char getChar(void);
 

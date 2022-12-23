@@ -6,7 +6,9 @@ Input::Input(char **table) : _input(""), _index(0)
 		this->_input += table[i];
 }
 
-Input::Input(char *str) : _input(""), _index(0) { this->_input = str; }
+Input::Input(char const *str) : _input(""), _index(0) { this->_input = str; }
+
+Input::Input(std::string const &str) : _input(str), _index(0) { ; }
 
 char
 Input::getChar(void)
