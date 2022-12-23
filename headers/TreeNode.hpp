@@ -5,17 +5,11 @@
 class TreeNode
 {
   public:
-	virtual ~TreeNode(void) {}
+	virtual ~TreeNode(void);
 	virtual int	 eval(void) = 0;
 	virtual void print(void) = 0;
 };
 
-std::ostream &
-operator<<(std::ostream &output, TreeNode &node)
-{
-
-	std::cout << node.eval();
-	return output;
-}
+std::ostream &operator<<(std::ostream &output, TreeNode &node);
 
 #endif /* TREE_NODE_HPP */
