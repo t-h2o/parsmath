@@ -36,10 +36,8 @@ test_sum_3(char *str)
 	TreeNode *sum;
 
 	number = create_token(&str);
-	sum = create_token(&str);
-	sum->set_left(number);
-
-	tree = sum;
+	tree = create_token(&str);
+	tree->set_left(number);
 
 	number = create_token(&str);
 	sum = create_token(&str);
