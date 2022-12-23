@@ -44,6 +44,49 @@ asdf(TreeNode *parent, char **str)
 	return operation;
 }
 
+static int
+qwer(TreeNode **parent, char **str, TreeNode **number)
+{
+	TreeNode *operation;
+
+	*number = create_token(str);
+	operation = create_token(str);
+
+	if (operation == 0)
+		return 1;
+
+	operation->set_left(*number);
+	if (parent && *parent)
+		(*parent)->set_right(operation);
+
+	*parent = operation;
+
+	return 2;
+}
+
+static void
+test_sum_4_2(char *str)
+{
+	TreeNode *tree;
+	TreeNode *next;
+	TreeNode *number;
+
+	tree = 0;
+	qwer(&tree, &str, &number);
+	next = tree;
+	while (qwer(&next, &str, &number) == 2)
+		;
+
+	next->set_right(number);
+
+	section("print");
+	tree->print();
+	section("tree");
+	tree->tree();
+
+	delete tree;
+}
+
 static void
 test_sum_3_2(char *str)
 {
@@ -216,6 +259,11 @@ main(void)
 	test_sum_5((char *)"1+2+3+4+5");
 
 	test_sum_3_2((char *)"1 + 2 + 3");
+
+	title("Sum 4 - 2");
+	test_sum_4_2((char *)"1 + 2 + 3 + 4");
+	test_sum_4_2((char *)"1 + 2 + 3 + 4 + 5");
+	test_sum_4_2((char *)"1 + 2 + 3 + 4 + 5 + 6");
 
 	return 0;
 }
