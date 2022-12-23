@@ -6,28 +6,13 @@
 class Add : public Infix
 {
   public:
-	~Add(void){};
+	~Add(void);
 
-	int
-	eval(void)
-	{
-		return this->_left->eval() + this->_right->eval();
-	}
+	int eval(void);
 
-	void
-	print(void)
-	{
-		std::cout << this->get_left() << " + " << this->get_right()
-				  << std::endl;
-	}
+	void print(void);
 };
 
-std::ostream &
-operator<<(std::ostream &output, Add &node)
-{
-
-	std::cout << node.get_left() << " + " << node.get_right() << std::endl;
-	return output;
-}
+std::ostream &operator<<(std::ostream &output, Add &node);
 
 #endif /* ADD_HPP */

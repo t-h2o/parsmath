@@ -21,6 +21,7 @@ SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/color.cpp
+SRCS	+=	$(SRCD)/Add.cpp
 SRCS	+=	$(SRCD)/Infix.cpp
 SRCS	+=	$(SRCD)/TreeNode.cpp
 
