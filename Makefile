@@ -22,6 +22,7 @@ SRCD	=	srcs
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/color.cpp
 SRCS	+=	$(SRCD)/Add.cpp
+SRCS	+=	$(SRCD)/Input.cpp
 SRCS	+=	$(SRCD)/Number.cpp
 SRCS	+=	$(SRCD)/TreeNode.cpp
 
@@ -32,6 +33,7 @@ INCD	=	headers
 
 INCS	=	$(INCD)/TreeNode.hpp
 INCS	+=	$(INCD)/Add.hpp
+INCS	+=	$(INCD)/Input.hpp
 INCS	+=	$(INCD)/Number.hpp
 
 #	Objets

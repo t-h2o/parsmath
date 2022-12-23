@@ -1,4 +1,5 @@
 #include "Add.hpp"
+#include "Input.hpp"
 #include "Number.hpp"
 #include "color.hpp"
 #include <cctype>
@@ -76,10 +77,19 @@ test_sum(char *str)
 }
 
 int
-main(void)
+main(int argc, char **argv)
 {
 	title("Parsmath");
 
+	if (argc >= 2)
+	{
+		Input input(argv + 1);
+		std::cout << input.getChar();
+		std::cout << input.getChar();
+		std::cout << input.getChar();
+		std::cout << input.getChar();
+		return (0);
+	}
 	title("Sum");
 	test_sum((char *)"1 + 2");
 	test_sum((char *)"1 + 2 + 3 + 4");
