@@ -189,8 +189,6 @@ abstract TreeNode {
 note right of TreeNode::~TreeNode
   Free left and right tree nodes
 end note
-abstract Infix {
-}
 
 class Add {
   .. public ..
@@ -210,9 +208,8 @@ class Number {
   int	_number;
 }
 
-TreeNode <|-- Infix
 TreeNode <|-- Number
-Infix <|-- Add
+TreeNode <|-- Add
 
 @enduml
 ....

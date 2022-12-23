@@ -1,9 +1,9 @@
 #ifndef ADD_HPP
 #define ADD_HPP
 
-#include "Infix.hpp"
+#include "TreeNode.hpp"
 
-class Add : public Infix
+class Add : public TreeNode
 {
   public:
 	~Add(void);
