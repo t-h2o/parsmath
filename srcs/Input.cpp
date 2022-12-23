@@ -17,7 +17,8 @@ Input::getChar(void)
 	if (_index >= this->_input.length())
 		return 'x';
 
-	return this->_input[_index++];
+	return this->_input[_index];
+}
 
 int
 Input::getNumber(void) const
