@@ -35,13 +35,19 @@ TreeNode::set_right(TreeNode *node)
 TreeNode &
 TreeNode::get_left(void)
 {
-	return *(this->_left);
+	if (this->_left == 0)
+		throw NullPointerNode();
+	else
+		return *(this->_left);
 }
 
 TreeNode &
 TreeNode::get_right(void)
 {
-	return *(this->_right);
+	if (this->_right == 0)
+		throw NullPointerNode();
+	else
+		return *(this->_right);
 }
 
 bool
