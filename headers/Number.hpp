@@ -17,4 +17,6 @@ class Number : public TreeNode
 	int _number;
 };
 
+std::ostream &operator<<(std::ostream &output, Number &number);
+
 #endif /* NUMBER_HPP */

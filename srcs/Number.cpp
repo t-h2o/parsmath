@@ -19,3 +19,10 @@ Number::print(void)
 {
 	std::cout << this->_number;
 }
+
+std::ostream &
+operator<<(std::ostream &output, Number &number)
+{
+	std::cout << number.eval();
+	return output;
+}
