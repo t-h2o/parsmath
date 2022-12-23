@@ -1,17 +1,18 @@
 #include "Input.hpp"
 
-Input::Input(char **table) : _input(table), _line(0), _index(0) { ; }
+Input::Input(char **table) : _input(""), _index(0)
+{
+	for (size_t i = 0; table[i]; ++i)
+		this->_input += table[i];
+}
+
+Input::Input(char *str) : _input(""), _index(0) { this->_input = str; }
 
 char
 Input::getChar(void)
 {
-	if (this->_input[this->_line] == 0)
+	if (_index >= this->_input.length())
 		return 'x';
-	if (this->_input[this->_line][this->_index] == 0)
-	{
-		if (this->_input[++this->_line] == 0)
-			return 'y';
-		this->_index = 0;
-	}
-	return this->_input[this->_line][this->_index++];
+
+	return this->_input[_index++];
 }
