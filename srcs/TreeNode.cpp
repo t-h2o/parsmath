@@ -68,6 +68,7 @@ void
 TreeNode::tree(void)
 {
 	this->_tree(1);
+	std::cout << std::endl;
 }
 
 void
@@ -82,7 +83,6 @@ TreeNode::_tree(size_t indent)
 			std::cout << "   ";
 		std::cout << "└─ ";
 		this->get_right()._tree(indent + 2);
-		std::cout << std::endl;
 	}
 	else
 	{
