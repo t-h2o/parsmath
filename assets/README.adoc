@@ -171,27 +171,26 @@ class Negate {
 skinparam defaultFontName JetBrains Mono
 
 abstract TreeNode {
+  .. Member ..
+  +~TreeNode(void);
   .. public ..
   +{abstract} int eval(void) = 0;
   +{abstract} void print(void) = 0;
-  .. operator << ..
-  std::cout << node.eval();
-}
-abstract Infix {
-  .. members ..
-  +~Infix(void);
-  .. public ..
   +void set_left(int);
   +void set_right(int);
   +TreeNode &get_left(void);
   +TreeNode &get_right(void);
+  .. operator << ..
+  std::cout << node.eval();
   .. protected ..
   TreeNode	*left;
   TreeNode	*right;
 }
-note right of Infix::~Infix
+note right of TreeNode::~TreeNode
   Free left and right tree nodes
 end note
+abstract Infix {
+}
 
 class Add {
   .. public ..
