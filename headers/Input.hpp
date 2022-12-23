@@ -14,6 +14,10 @@ class Input
 
 	std::string &getInput(void);
 
+	int getNumber(void) const;
+
+	void incIndex(void);
+
   private:
 	std::string _input;
 	size_t		_index;

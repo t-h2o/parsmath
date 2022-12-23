@@ -1,4 +1,5 @@
 #include "Input.hpp"
+#include <stdlib.h>
 
 Input::Input(char **table) : _input(""), _index(0)
 {
@@ -17,10 +18,23 @@ Input::getChar(void)
 		return 'x';
 
 	return this->_input[_index++];
+
+int
+Input::getNumber(void) const
+{
+	return atoi(&(this->_input[_index]));
 }
 
 std::string &
 Input::getInput(void)
 {
 	return this->_input;
+}
+
+void
+Input::incIndex(void)
+{
+	if (_index >= this->_input.length())
+		return;
+	++this->_index;
 }
