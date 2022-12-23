@@ -6,26 +6,12 @@
 class Number : public TreeNode
 {
   public:
-	Number(int const &number) : _number(number){};
-	~Number(void){};
+	Number(int const &number);
+	~Number(void);
 
-	int
-	eval(void)
-	{
-		return _number;
-	}
-
-	void
-	set_number(int const number)
-	{
-		_number = number;
-	}
-
-	void
-	print(void)
-	{
-		std::cout << this->_number;
-	}
+	int	 eval(void);
+	void set_number(int const number);
+	void print(void);
 
   private:
 	int _number;
