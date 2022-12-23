@@ -53,12 +53,21 @@ TreeNode::isOperator(void) const
 void
 TreeNode::tree(void)
 {
+	this->_tree(1);
+}
+
+void
+TreeNode::_tree(size_t indent)
+{
 	if (this->isOperator())
 	{
 		std::cout << "+ ─┬─ ";
-		this->get_left().tree();
-		std::cout << std::endl << "   └─ ";
-		this->get_right().tree();
+		this->get_left()._tree(indent + 2);
+		std::cout << std::endl;
+		for (size_t i = 0; i < indent; ++i)
+			std::cout << "   ";
+		std::cout << "└─ ";
+		this->get_right()._tree(indent + 2);
 		std::cout << std::endl;
 	}
 	else
