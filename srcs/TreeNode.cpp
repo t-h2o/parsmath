@@ -44,6 +44,12 @@ TreeNode::get_right(void)
 	return *(this->_right);
 }
 
+bool
+TreeNode::isOperator(void) const
+{
+	return this->_isOperator;
+}
+
 std::ostream &
 operator<<(std::ostream &output, TreeNode &node)
 {

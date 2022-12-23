@@ -11,13 +11,14 @@ class TreeNode
 	virtual int	 eval(void) = 0;
 	virtual void print(void) = 0;
 
-	void	  set_left(int const &number);
-	void	  set_left(TreeNode *);
-	void	  set_right(int const &number);
-	void	  set_right(TreeNode *);
+	void set_left(int const &number);
+	void set_left(TreeNode *);
+	void set_right(int const &number);
+	void set_right(TreeNode *);
 
 	TreeNode &get_left(void);
 	TreeNode &get_right(void);
+	bool	  isOperator(void) const;
 
   protected:
 	bool _isOperator;
