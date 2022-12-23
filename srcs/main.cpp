@@ -28,6 +28,44 @@ create_token(char **str)
 	return 0;
 }
 
+static TreeNode *
+asdf(TreeNode *parent, char **str)
+{
+	TreeNode *operation;
+	TreeNode *number;
+
+	number = create_token(str);
+	operation = create_token(str);
+
+	operation->set_left(number);
+	if (parent)
+		parent->set_right(operation);
+
+	return operation;
+}
+
+static void
+test_sum_3_2(char *str)
+{
+	TreeNode *tree;
+	TreeNode *number;
+
+	tree = asdf(0, &str);
+
+	asdf(tree, &str);
+
+	number = create_token(&str);
+
+	tree->get_right().set_right(number);
+
+	section("print");
+	tree->print();
+	section("tree");
+	tree->tree();
+
+	delete tree;
+}
+
 static void
 test_sum_5(char *str)
 {
@@ -176,6 +214,8 @@ main(void)
 	test_sum_4((char *)"1+2+3+4");
 
 	test_sum_5((char *)"1+2+3+4+5");
+
+	test_sum_3_2((char *)"1 + 2 + 3");
 
 	return 0;
 }
