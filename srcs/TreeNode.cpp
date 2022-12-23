@@ -1,4 +1,5 @@
 #include "TreeNode.hpp"
+#include "Infix.hpp"
 #include "Number.hpp"
 
 TreeNode::TreeNode(void) : _left(0), _right(0) { ; }
@@ -74,9 +75,13 @@ TreeNode::tree(void)
 void
 TreeNode::_tree(size_t indent)
 {
+	Infix *operation;
+
 	if (this->isOperator())
 	{
-		std::cout << "+ ─┬─ ";
+		operation = dynamic_cast<Infix *>(this);
+
+		std::cout << operation->getSymbole() << " ─┬─ ";
 		this->get_left()._tree(indent + 2);
 		std::cout << std::endl;
 		for (size_t i = 0; i < indent; ++i)
