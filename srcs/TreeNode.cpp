@@ -15,9 +15,21 @@ TreeNode::set_left(int const &number)
 }
 
 void
+TreeNode::set_left(TreeNode *node)
+{
+	this->_left = node;
+}
+
+void
 TreeNode::set_right(int const &number)
 {
 	this->_right = new Number(number);
+}
+
+void
+TreeNode::set_right(TreeNode *node)
+{
+	this->_right = node;
 }
 
 TreeNode &
