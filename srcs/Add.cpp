@@ -11,13 +11,13 @@ Add::eval(void)
 void
 Add::print(void)
 {
-	std::cout << this->get_left() << " + " << this->get_right() << std::endl;
+	std::cout << *this << " = " << this->eval() << std::endl;
 }
 
 std::ostream &
 operator<<(std::ostream &output, Add &node)
 {
 
-	std::cout << node.get_left() << " + " << node.get_right() << std::endl;
+	std::cout << node.get_left() << " + " << node.get_right();
 	return output;
 }
