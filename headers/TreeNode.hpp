@@ -19,6 +19,9 @@ class TreeNode
 	TreeNode &get_left(void);
 	TreeNode &get_right(void);
 
+  protected:
+	bool _isOperator;
+
   private:
 	TreeNode *_left;
 	TreeNode *_right;

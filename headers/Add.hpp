@@ -6,6 +6,7 @@
 class Add : public TreeNode
 {
   public:
+	Add(void);
 	~Add(void);
 
 	int eval(void);

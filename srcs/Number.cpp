@@ -1,5 +1,5 @@
 #include "Number.hpp"
-Number::Number(int const &number) : _number(number){};
+Number::Number(int const &number) : _number(number) { this->_isOperator = 0; }
 Number::~Number(void){};
 
 int
