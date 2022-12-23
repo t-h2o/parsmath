@@ -50,6 +50,23 @@ TreeNode::isOperator(void) const
 	return this->_isOperator;
 }
 
+void
+TreeNode::tree(void)
+{
+	if (this->isOperator())
+	{
+		std::cout << "+ ─┬─ ";
+		this->get_left().tree();
+		std::cout << std::endl << "   └─ ";
+		this->get_right().tree();
+		std::cout << std::endl;
+	}
+	else
+	{
+		std::cout << this->eval();
+	}
+}
+
 std::ostream &
 operator<<(std::ostream &output, TreeNode &node)
 {

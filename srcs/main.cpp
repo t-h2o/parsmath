@@ -43,6 +43,7 @@ test_sum(char *str)
 	sum->set_right(number);
 
 	sum->print();
+	sum->tree();
 
 	delete sum;
 }

@@ -20,6 +20,8 @@ class TreeNode
 	TreeNode &get_right(void);
 	bool	  isOperator(void) const;
 
+	void tree(void);
+
   protected:
 	bool _isOperator;
 
