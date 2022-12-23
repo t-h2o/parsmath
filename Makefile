@@ -31,10 +31,11 @@ SRCS	+=	$(SRCD)/TreeNode.cpp
 
 INCD	=	headers
 
-INCS	=	$(INCD)/TreeNode.hpp
+INCS	=	$(INCD)/color.hpp
 INCS	+=	$(INCD)/Add.hpp
 INCS	+=	$(INCD)/Input.hpp
 INCS	+=	$(INCD)/Number.hpp
+INCS	+=	$(INCD)/TreeNode.hpp
 
 #	Objets
 
