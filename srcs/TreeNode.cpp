@@ -11,24 +11,32 @@ TreeNode::~TreeNode(void)
 void
 TreeNode::set_left(int const &number)
 {
+	if (this->_left)
+		throw NodeAlreadyDefine();
 	this->_left = new Number(number);
 }
 
 void
 TreeNode::set_left(TreeNode *node)
 {
+	if (this->_left)
+		throw NodeAlreadyDefine();
 	this->_left = node;
 }
 
 void
 TreeNode::set_right(int const &number)
 {
+	if (this->_right)
+		throw NodeAlreadyDefine();
 	this->_right = new Number(number);
 }
 
 void
 TreeNode::set_right(TreeNode *node)
 {
+	if (this->_right)
+		throw NodeAlreadyDefine();
 	this->_right = node;
 }
 

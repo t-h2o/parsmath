@@ -22,6 +22,16 @@ class TreeNode
 
 	void tree(void);
 
+	class NodeAlreadyDefine : public std::exception
+	{
+	  public:
+		const char *
+		what() const throw()
+		{
+			return "Node already define";
+		}
+	};
+
 	class NullPointerNode : public std::exception
 	{
 	  public:
