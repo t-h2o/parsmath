@@ -12,6 +12,7 @@ class Add : public TreeNode
 	int eval(void);
 
 	void print(void);
+	void result(void);
 };
 
 std::ostream &operator<<(std::ostream &output, Add &node);

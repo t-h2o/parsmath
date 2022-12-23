@@ -15,6 +15,13 @@ Number::set_number(int const number)
 }
 
 void
+Number::result(void)
+{
+	this->print();
+	std::cout << " = " << this->eval() << std::endl;
+}
+
+void
 Number::print(void)
 {
 	std::cout << this->_number;

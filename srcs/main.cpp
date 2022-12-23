@@ -71,7 +71,7 @@ test_sum(char *str)
 	section("tree");
 	tree->tree();
 
-	tree->print();
+	tree->result();
 	delete tree;
 }
 

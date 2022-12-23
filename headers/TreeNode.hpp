@@ -10,6 +10,7 @@ class TreeNode
 	virtual ~TreeNode(void);
 	virtual int	 eval(void) = 0;
 	virtual void print(void) = 0;
+	virtual void result(void) = 0;
 
 	void set_left(int const &number);
 	void set_left(TreeNode *);

@@ -12,6 +12,7 @@ class Number : public TreeNode
 	int	 eval(void);
 	void set_number(int const number);
 	void print(void);
+	void result(void);
 
   private:
 	int _number;

@@ -10,12 +10,18 @@ Add::eval(void)
 }
 
 void
+Add::result(void)
+{
+	this->print();
+	std::cout << " = " << this->eval() << std::endl;
+}
+
+void
 Add::print(void)
 {
 	this->get_left().print();
 	std::cout << " + ";
 	this->get_right().print();
-	std::cout << " = " << this->eval() << std::endl;
 }
 
 std::ostream &
