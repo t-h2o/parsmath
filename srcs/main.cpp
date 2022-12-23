@@ -65,22 +65,25 @@ qwer(TreeNode **parent, char **str, TreeNode **number)
 }
 
 static void
-test_sum_4_2(char *str)
+test_sum(char *str)
 {
 	TreeNode *tree;
 	TreeNode *next;
 	TreeNode *number;
 
+	message(str);
 	tree = 0;
-	qwer(&tree, &str, &number);
-	next = tree;
-	while (qwer(&next, &str, &number) == 2)
-		;
+	if (qwer(&tree, &str, &number) == 2)
+	{
+		next = tree;
+		while (qwer(&next, &str, &number) == 2)
+			;
+	}
+	else
+		next = tree;
 
 	next->set_right(number);
 
-	section("print");
-	tree->print();
 	section("tree");
 	tree->tree();
 
@@ -260,10 +263,11 @@ main(void)
 
 	test_sum_3_2((char *)"1 + 2 + 3");
 
-	title("Sum 4 - 2");
-	test_sum_4_2((char *)"1 + 2 + 3 + 4");
-	test_sum_4_2((char *)"1 + 2 + 3 + 4 + 5");
-	test_sum_4_2((char *)"1 + 2 + 3 + 4 + 5 + 6");
+	title("Sum");
+	test_sum((char *)"1 + 2");
+	test_sum((char *)"1 + 2 + 3 + 4");
+	test_sum((char *)"1 + 2 + 3 + 4 + 5");
+	test_sum((char *)"1 + 2 + 3 + 4 + 5 + 6");
 
 	return 0;
 }
