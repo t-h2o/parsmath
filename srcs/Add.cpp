@@ -5,7 +5,7 @@ Add::~Add(void) { ; }
 int
 Add::eval(void)
 {
-	return this->_left->eval() + this->_right->eval();
+	return this->get_left().eval() + this->get_right().eval();
 }
 
 void
