@@ -7,36 +7,13 @@
 class Infix : public TreeNode
 {
   public:
-	Infix(void) : _left(0), _right(0) {}
-	virtual ~Infix(void)
-	{
-		delete this->_left;
-		delete this->_right;
-	}
+	Infix(void);
+	virtual ~Infix(void);
 
-	void
-	set_left(int const &number)
-	{
-		this->_left = new Number(number);
-	}
-
-	void
-	set_right(int const &number)
-	{
-		this->_right = new Number(number);
-	}
-
-	TreeNode &
-	get_left(void)
-	{
-		return *(this->_left);
-	}
-
-	TreeNode &
-	get_right(void)
-	{
-		return *(this->_right);
-	}
+	void	  set_left(int const &number);
+	void	  set_right(int const &number);
+	TreeNode &get_left(void);
+	TreeNode &get_right(void);
 
   protected:
 	TreeNode *_left;
