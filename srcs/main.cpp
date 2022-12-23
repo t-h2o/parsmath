@@ -42,7 +42,9 @@ test_sum(char *str)
 
 	sum->set_right(number);
 
+	section("print");
 	sum->print();
+	section("tree");
 	sum->tree();
 
 	delete sum;
@@ -54,6 +56,8 @@ main(void)
 	title("Parsmath");
 
 	test_sum((char *)"1 + 2");
+	test_sum((char *)"42 + 34");
+	test_sum((char *)"123456+654321");
 
 	return 0;
 }
