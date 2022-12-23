@@ -48,23 +48,11 @@ test_sum(char *str)
 	delete sum;
 }
 
-static void
-test(void)
-{
-	TreeNode *sum = new Add();
-	sum->set_left(32);
-	sum->set_right(10);
-
-	sum->print();
-	delete sum;
-}
-
 int
 main(void)
 {
 	title("Parsmath");
 
-	test();
 	test_sum((char *)"1 + 2");
 
 	return 0;
