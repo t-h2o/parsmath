@@ -17,7 +17,7 @@ class TreeNode
 	TreeNode &get_left(void);
 	TreeNode &get_right(void);
 
-  protected:
+  private:
 	TreeNode *_left;
 	TreeNode *_right;
 };
