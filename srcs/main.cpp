@@ -6,7 +6,7 @@
 static void
 test(void)
 {
-	Infix *sum = new Add();
+	TreeNode *sum = new Add();
 	sum->set_left(32);
 	sum->set_right(10);
 
