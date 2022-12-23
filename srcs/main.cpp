@@ -29,6 +29,35 @@ create_token(char **str)
 }
 
 static void
+test_sum_3(char *str)
+{
+	TreeNode *tree;
+	TreeNode *number;
+	TreeNode *sum;
+
+	number = create_token(&str);
+	sum = create_token(&str);
+	sum->set_left(number);
+
+	tree = sum;
+
+	number = create_token(&str);
+	sum = create_token(&str);
+	sum->set_left(number);
+	number = create_token(&str);
+	sum->set_right(number);
+
+	tree->set_right(sum);
+
+	section("print");
+	tree->print();
+	section("tree");
+	tree->tree();
+
+	delete tree;
+}
+
+static void
 test_sum_2(char *str)
 {
 	TreeNode *number;
@@ -58,6 +87,8 @@ main(void)
 	test_sum_2((char *)"1 + 2");
 	test_sum_2((char *)"42 + 34");
 	test_sum_2((char *)"123456+654321");
+
+	test_sum_3((char *)"1 + 2 + 3");
 
 	return 0;
 }
