@@ -24,6 +24,12 @@ Add::print(void)
 	this->get_right().print();
 }
 
+char
+Add::getSymbole(void) const
+{
+	return '+';
+}
+
 std::ostream &
 operator<<(std::ostream &output, Add &node)
 {

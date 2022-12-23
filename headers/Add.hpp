@@ -13,6 +13,8 @@ class Add : public Infix
 
 	void print(void);
 	void result(void);
+
+	char getSymbole(void) const;
 };
 
 std::ostream &operator<<(std::ostream &output, Add &node);

@@ -8,6 +8,8 @@ class Infix : public TreeNode
 {
   public:
 	virtual ~Infix(void);
+
+	virtual char getSymbole(void) const = 0;
 };
 
 #endif /* INFIX_HPP */
