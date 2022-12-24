@@ -68,7 +68,7 @@ TreeNode::isOperator(void) const
 void
 TreeNode::tree(void)
 {
-	this->_tree(1);
+	this->_tree(0);
 	std::cout << std::endl;
 }
 
@@ -82,11 +82,11 @@ TreeNode::_tree(size_t indent)
 		operation = dynamic_cast<Infix *>(this);
 
 		std::cout << operation->getSymbole() << " ─┬─ ";
-		this->get_left()._tree(indent + 2);
+		this->get_left()._tree(indent + 1);
 		std::cout << std::endl;
 		for (size_t i = 0; i < indent; ++i)
-			std::cout << "   ";
-		std::cout << "└─ ";
+			std::cout << "   │  ";
+		std::cout << "   └─ ";
 		this->get_right()._tree(indent + 2);
 	}
 	else
