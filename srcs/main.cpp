@@ -2,49 +2,21 @@
 #include "Subtract.hpp"
 #include "Input.hpp"
 #include "Number.hpp"
+#include "Tokenizer.hpp"
 #include "color.hpp"
 #include <cctype>
 #include <iostream>
-
-static void
-create_token(Input &exp, TreeNode **node)
-{
-	int number;
-
-	while (isspace(exp.getChar()))
-		exp.incIndex();
-
-	if (isdigit(exp.getChar()))
-	{
-		number = exp.getNumber();
-		while (isdigit(exp.getChar()))
-			exp.incIndex();
-		*node = new Number(number);
-	}
-	else if (exp.getChar() == '+')
-	{
-		exp.incIndex();
-		*node = new Add();
-	}
-	else if (exp.getChar() == '-')
-	{
-		exp.incIndex();
-		*node = new Subtract();
-	}
-	else
-		*node = 0;
-}
 
 static void
 first(Input &exp, TreeNode **operation)
 {
 	TreeNode *number;
 
-	create_token(exp, &number);
-	create_token(exp, operation);
+	Tokenizer::create_token(exp, &number);
+	Tokenizer::create_token(exp, operation);
 	(*operation)->set_left(number);
 
-	create_token(exp, &number);
+	Tokenizer::create_token(exp, &number);
 	(*operation)->set_right(number);
 }
 
@@ -54,10 +26,10 @@ second(Input &exp, TreeNode **child)
 	TreeNode *number;
 	TreeNode *operation;
 
-	create_token(exp, &operation);
+	Tokenizer::create_token(exp, &operation);
 	if (operation == 0)
 		return 0;
-	create_token(exp, &number);
+	Tokenizer::create_token(exp, &number);
 
 	operation->set_left(*child);
 	operation->set_right(number);
