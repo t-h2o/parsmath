@@ -10,6 +10,15 @@ class Tokenizer
 {
   public:
 	static void create_token(Input &, TreeNode **);
+
+	class BadExpression : std::exception
+	{
+		char const *
+		what() const throw()
+		{
+			return "Bad expression";
+		}
+	};
 };
 
 #endif /* TOKENISER_HPP */

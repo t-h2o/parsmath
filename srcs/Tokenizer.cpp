@@ -25,6 +25,8 @@ Tokenizer::create_token(Input &exp, TreeNode **node)
 		exp.incIndex();
 		*node = new Subtract();
 	}
+	else if (isalpha(exp.getChar()))
+		throw BadExpression();
 	else
 		*node = 0;
 }
