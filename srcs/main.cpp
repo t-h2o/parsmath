@@ -84,12 +84,7 @@ main(int argc, char **argv)
 
 	if (argc >= 2)
 	{
-		Input input(argv + 1);
-		std::cout << input.getChar();
-		std::cout << input.getChar();
-		std::cout << input.getChar();
-		std::cout << input.getChar();
-		std::cout << input.getInput();
+		test(argv + 1);
 		return (0);
 	}
 	title("Sum");
