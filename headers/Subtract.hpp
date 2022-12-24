@@ -15,6 +15,7 @@ class Subtract : public Infix
 	void result(void);
 
 	char getSymbole(void) const;
+	char getPriority(void) const;
 };
 
 std::ostream &operator<<(std::ostream &output, Subtract &node);

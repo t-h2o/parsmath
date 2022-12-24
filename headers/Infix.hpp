@@ -10,6 +10,7 @@ class Infix : public TreeNode
 	virtual ~Infix(void);
 
 	virtual char getSymbole(void) const = 0;
+	virtual char getPriority(void) const = 0;
 };
 
 #endif /* INFIX_HPP */

@@ -15,6 +15,7 @@ class Add : public Infix
 	void result(void);
 
 	char getSymbole(void) const;
+	char getPriority(void) const;
 };
 
 std::ostream &operator<<(std::ostream &output, Add &node);

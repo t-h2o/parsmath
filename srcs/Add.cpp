@@ -32,6 +32,12 @@ Add::getSymbole(void) const
 	return '+';
 }
 
+char
+Add::getPriority(void) const
+{
+	return 0;
+}
+
 std::ostream &
 operator<<(std::ostream &output, Add &node)
 {
