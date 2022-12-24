@@ -19,9 +19,11 @@ Add::result(void)
 void
 Add::print(void)
 {
+	std::cout << "(";
 	this->get_left().print();
 	std::cout << " + ";
 	this->get_right().print();
+	std::cout << ")";
 }
 
 char
