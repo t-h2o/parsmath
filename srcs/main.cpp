@@ -48,19 +48,22 @@ first(Input &exp, TreeNode **operation)
 	(*operation)->set_right(number);
 }
 
-static void
-second(Input &exp, TreeNode ** child)
+static int
+second(Input &exp, TreeNode **child)
 {
 	TreeNode *number;
 	TreeNode *operation;
 
 	create_token(exp, &operation);
+	if (operation == 0)
+		return 0;
 	create_token(exp, &number);
 
 	operation->set_left(*child);
 	operation->set_right(number);
 
 	*child = operation;
+	return 1;
 }
 
 static void
@@ -70,7 +73,8 @@ test(Input exp)
 
 	TreeNode *tree;
 	first(exp, &tree);
-	second(exp, &tree);
+	while (second(exp, &tree))
+		;
 
 	tree->result();
 	tree->tree();
@@ -92,6 +96,8 @@ main(int argc, char **argv)
 	test("100 - 5 + 25");
 	test("100 + 5 - 25");
 	test("100 + 5 + 25");
+	test("100 + 5 + 25 + 30 + 40");
+	test("100 + 5 + 25 + 30 -2 + 40 -3");
 
 	return 0;
 }
