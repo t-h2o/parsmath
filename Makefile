@@ -25,6 +25,7 @@ SRCS	+=	$(SRCD)/Add.cpp
 SRCS	+=	$(SRCD)/Infix.cpp
 SRCS	+=	$(SRCD)/Input.cpp
 SRCS	+=	$(SRCD)/Number.cpp
+SRCS	+=	$(SRCD)/Subtract.cpp
 SRCS	+=	$(SRCD)/TreeNode.cpp
 
 
@@ -37,6 +38,7 @@ INCS	+=	$(INCD)/Add.hpp
 INCS	+=	$(INCD)/Infix.hpp
 INCS	+=	$(INCD)/Input.hpp
 INCS	+=	$(INCD)/Number.hpp
+INCS	+=	$(INCD)/Subtract.hpp
 INCS	+=	$(INCD)/TreeNode.hpp
 
 #	Objets
