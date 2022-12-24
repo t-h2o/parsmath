@@ -3,6 +3,7 @@
 
 #include "Add.hpp"
 #include "Input.hpp"
+#include "Mult.hpp"
 #include "Number.hpp"
 #include "Subtract.hpp"
 

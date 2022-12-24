@@ -25,6 +25,11 @@ Tokenizer::_create_token(Input &exp)
 		exp.incIndex();
 		return new Subtract();
 	}
+	else if (exp.getChar() == 'x')
+	{
+		exp.incIndex();
+		return new Mult();
+	}
 	else if (isalpha(exp.getChar()))
 		throw BadExpression();
 	else
