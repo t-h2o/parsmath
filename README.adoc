@@ -91,3 +91,7 @@ image:assets/class_id.svg[Class: id]
 === Classes
 
 image:assets/program_class.svg[Class into the program]
+
+=== Parsing
+
+image:assets/parse_token.svg[Parsing token]

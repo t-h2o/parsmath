@@ -236,3 +236,19 @@ Infix <|-- Add
 
 @enduml
 ....
+
+[plantuml, target=parse_token, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+[*] --> start
+start --> loop
+loop --> loop
+loop --> [*]
+
+start : Number and an operator "+/-"\nand another number
+loop: An operator "+/-" and a number
+
+@enduml
+....
