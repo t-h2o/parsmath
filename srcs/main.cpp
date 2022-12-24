@@ -102,6 +102,7 @@ main(int argc, char **argv)
 	test("1 + 2 + 3 + 4 + 5");
 	test("1 + 2 + 3 + 4 + 5 + 6");
 	test("100 - 5");
+	test("100 - 5 + 25 + 70");
 
 	return 0;
 }
