@@ -77,17 +77,29 @@ TreeNode::_tree(size_t indent)
 {
 	Infix *operation;
 
-	if (this->isOperator())
-	{
-		operation = dynamic_cast<Infix *>(this);
+	operation = dynamic_cast<Infix *>(this);
 
+	if (operation)
+	{
 		std::cout << operation->getSymbole() << " ─┬─ ";
-		this->get_left()._tree(indent + 1);
-		std::cout << std::endl;
-		for (size_t i = 0; i < indent; ++i)
-			std::cout << "   │  ";
-		std::cout << "   └─ ";
-		this->get_right()._tree(indent + 2);
+		if (this->get_left().isOperator())
+		{
+			this->get_left()._tree(indent + 1);
+			std::cout << std::endl;
+			for (size_t i = 0; i < indent; ++i)
+				std::cout << "   │  ";
+			std::cout << "   └─ ";
+			this->get_right()._tree(indent + 2);
+		}
+		else
+		{
+			this->get_right()._tree(indent + 1);
+			std::cout << std::endl;
+			for (size_t i = 0; i < indent; ++i)
+				std::cout << "   │  ";
+			std::cout << "   └─ ";
+			this->get_left()._tree(indent + 2);
+		}
 	}
 	else
 	{
