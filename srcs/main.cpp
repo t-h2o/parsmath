@@ -1,11 +1,5 @@
-#include "Add.hpp"
-#include "Input.hpp"
-#include "Number.hpp"
-#include "Subtract.hpp"
 #include "Tokenizer.hpp"
 #include "color.hpp"
-#include <cctype>
-#include <iostream>
 
 static void
 test(Input exp)
