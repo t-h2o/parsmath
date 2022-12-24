@@ -242,13 +242,20 @@ Infix <|-- Add
 @startuml
 skinparam defaultFontName JetBrains Mono
 
-[*] --> start
-start --> loop
-loop --> loop
-loop --> [*]
+[*] --> priorityOne
+priorityOne --> priorityOne : ! EOS
+priorityOne -> find : find
+find -> priorityOne
 
-start : Number and an operator "+/-"\nand another number
-loop: An operator "+/-" and a number
+priorityOne --> priorityZero : EOS, start again the input
+priorityZero --> priorityZero : ! EOS
+priorityZero -> find : find
+find -> priorityZero
+priorityZero --> [*]
+
+find: Find an operator as node\nset left with (index - 1) and\nset right with (index + 1)\nerase left and right of the stack pointer
+priorityOne: An operator "*" and a number
+priorityZero: An operator "+/-" and a number
 
 @enduml
 ....
