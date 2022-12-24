@@ -35,50 +35,45 @@ create_token(Input &exp, TreeNode **node)
 		*node = 0;
 }
 
-static int
-qwer(TreeNode **parent, Input &exp, TreeNode **number)
+static void
+first(Input &exp, TreeNode **operation)
 {
+	TreeNode *number;
+
+	create_token(exp, &number);
+	create_token(exp, operation);
+	(*operation)->set_left(number);
+
+	create_token(exp, &number);
+	(*operation)->set_right(number);
+}
+
+static void
+second(Input &exp, TreeNode ** child)
+{
+	TreeNode *number;
 	TreeNode *operation;
 
-	create_token(exp, number);
 	create_token(exp, &operation);
+	create_token(exp, &number);
 
-	if (operation == 0)
-		return 1;
+	operation->set_left(*child);
+	operation->set_right(number);
 
-	operation->set_left(*number);
-	if (parent && *parent)
-		(*parent)->set_right(operation);
-
-	*parent = operation;
-
-	return 2;
+	*child = operation;
 }
 
 static void
 test(Input exp)
 {
+	section(exp.getInput());
+
 	TreeNode *tree;
-	TreeNode *next;
-	TreeNode *number;
-
-	message(exp.getInput().c_str());
-	tree = 0;
-	if (qwer(&tree, exp, &number) == 2)
-	{
-		next = tree;
-		while (qwer(&next, exp, &number) == 2)
-			;
-	}
-	else
-		next = tree;
-
-	next->set_right(number);
-
-	section("tree");
-	tree->tree();
+	first(exp, &tree);
+	second(exp, &tree);
 
 	tree->result();
+	tree->tree();
 	delete tree;
 }
 
@@ -98,11 +93,10 @@ main(int argc, char **argv)
 		return (0);
 	}
 	title("Sum");
-	test("1 + 2 + 3 + 4");
-	test("1 + 2 + 3 + 4 + 5");
-	test("1 + 2 + 3 + 4 + 5 + 6");
-	test("100 - 5");
-	test("100 - 5 + 25 + 70");
+	test("100 - 5 - 25");
+	test("100 - 5 + 25");
+	test("100 + 5 - 25");
+	test("100 + 5 + 25");
 
 	return 0;
 }
