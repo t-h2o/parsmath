@@ -15,7 +15,7 @@ char
 Input::getChar(void)
 {
 	if (_index >= this->_input.length())
-		return 'x';
+		return 0;
 
 	return this->_input[_index];
 }
