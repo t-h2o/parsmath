@@ -56,7 +56,7 @@ qwer(TreeNode **parent, Input &exp, TreeNode **number)
 }
 
 static void
-test_sum(Input exp)
+test(Input exp)
 {
 	TreeNode *tree;
 	TreeNode *next;
@@ -98,10 +98,10 @@ main(int argc, char **argv)
 		return (0);
 	}
 	title("Sum");
-	test_sum("1 + 2 + 3 + 4");
-	test_sum("1 + 2 + 3 + 4 + 5");
-	test_sum("1 + 2 + 3 + 4 + 5 + 6");
-	test_sum("100 - 5");
+	test("1 + 2 + 3 + 4");
+	test("1 + 2 + 3 + 4 + 5");
+	test("1 + 2 + 3 + 4 + 5 + 6");
+	test("100 - 5");
 
 	return 0;
 }
