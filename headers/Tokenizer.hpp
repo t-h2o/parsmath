@@ -6,6 +6,8 @@
 #include "Number.hpp"
 #include "Subtract.hpp"
 
+#include <vector>
+
 class Tokenizer
 {
   public:
@@ -21,9 +23,7 @@ class Tokenizer
 	};
 
   private:
-	static void _first(Input &, TreeNode **);
-	static int	_second(Input &, TreeNode **);
-	static void _create_token(Input &, TreeNode **);
+	static TreeNode *_create_token(Input &);
 };
 
 #endif /* TOKENISER_HPP */

@@ -1,7 +1,7 @@
 #include "Tokenizer.hpp"
 
-void
-Tokenizer::_create_token(Input &exp, TreeNode **node)
+TreeNode *
+Tokenizer::_create_token(Input &exp)
 {
 	int number;
 
@@ -13,63 +13,48 @@ Tokenizer::_create_token(Input &exp, TreeNode **node)
 		number = exp.getNumber();
 		while (isdigit(exp.getChar()))
 			exp.incIndex();
-		*node = new Number(number);
+		return new Number(number);
 	}
 	else if (exp.getChar() == '+')
 	{
 		exp.incIndex();
-		*node = new Add();
+		return new Add();
 	}
 	else if (exp.getChar() == '-')
 	{
 		exp.incIndex();
-		*node = new Subtract();
+		return new Subtract();
 	}
 	else if (isalpha(exp.getChar()))
 		throw BadExpression();
 	else
-		*node = 0;
-}
-
-void
-Tokenizer::_first(Input &exp, TreeNode **operation)
-{
-	TreeNode *number;
-
-	_create_token(exp, &number);
-	_create_token(exp, operation);
-	(*operation)->set_left(number);
-
-	_create_token(exp, &number);
-	(*operation)->set_right(number);
-}
-
-int
-Tokenizer::_second(Input &exp, TreeNode **child)
-{
-	TreeNode *number;
-	TreeNode *operation;
-
-	_create_token(exp, &operation);
-	if (operation == 0)
 		return 0;
-	_create_token(exp, &number);
-
-	operation->set_left(*child);
-	operation->set_right(number);
-
-	*child = operation;
-	return 1;
 }
 
 TreeNode *
 Tokenizer::generate_tree(Input exp)
 {
-	TreeNode *tree;
+	std::vector<TreeNode *> _nodes;
+	size_t					index;
 
-	_first(exp, &tree);
-	while (_second(exp, &tree))
-		;
+	do
+	{
+		_nodes.push_back(_create_token(exp));
+	} while (_nodes.back());
+	_nodes.pop_back();
 
-	return tree;
+	_nodes.at(1)->set_left(_nodes.at(0));
+	_nodes.at(1)->set_right(_nodes.at(2));
+
+	index = 3;
+
+	while (index < _nodes.size() && _nodes.at(index)->isOperator() == 1
+		   && _nodes.at(index + 1)->isOperator() == 0)
+	{
+		_nodes.at(index)->set_left(_nodes.at(index - 2));
+		_nodes.at(index)->set_right(_nodes.at(index + 1));
+		index += 2;
+	}
+
+	return _nodes.at(index - 2);
 }
