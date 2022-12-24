@@ -1,7 +1,7 @@
 #include "Add.hpp"
-#include "Subtract.hpp"
 #include "Input.hpp"
 #include "Number.hpp"
+#include "Subtract.hpp"
 #include "Tokenizer.hpp"
 #include "color.hpp"
 #include <cctype>
