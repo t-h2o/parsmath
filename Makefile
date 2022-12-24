@@ -82,7 +82,10 @@ db: all
 	$(DB) $(NAME)
 
 format:
-	clang-format -i $(SRCS) $(INCS)
+	@cat $(SRCS) $(INCS) > /tmp/before
+	@clang-format $(SRCS) $(INCS) > /tmp/after
+	@diff -u --color=auto /tmp/before /tmp/after || true
+	@clang-format -i $(SRCS) $(INCS)
 
 
 diagram:
