@@ -5,8 +5,8 @@
 #include <cctype>
 #include <iostream>
 
-static TreeNode *
-create_token(Input &exp)
+static void
+create_token(Input &exp, TreeNode **node)
 {
 	int number;
 
@@ -18,14 +18,15 @@ create_token(Input &exp)
 		number = exp.getNumber();
 		while (isdigit(exp.getChar()))
 			exp.incIndex();
-		return new Number(number);
+		*node = new Number(number);
 	}
-	if (exp.getChar() == '+')
+	else if (exp.getChar() == '+')
 	{
 		exp.incIndex();
-		return new Add();
+		*node = new Add();
 	}
-	return 0;
+	else
+		*node = 0;
 }
 
 static int
@@ -33,8 +34,8 @@ qwer(TreeNode **parent, Input &exp, TreeNode **number)
 {
 	TreeNode *operation;
 
-	*number = create_token(exp);
-	operation = create_token(exp);
+	create_token(exp, number);
+	create_token(exp, &operation);
 
 	if (operation == 0)
 		return 1;
