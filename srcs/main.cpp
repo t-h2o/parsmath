@@ -24,12 +24,8 @@ main(int argc, char **argv)
 		return (0);
 	}
 	title("Sum");
-	test("100 - 5 - 25");
-	test("100 - 5 + 25");
-	test("100 + 5 - 25");
-	test("100 + 5 + 25");
-	test("100 + 5 + 25 + 30 + 40");
-	test("100 + 5 + 25 + 30 -2 + 40 -3");
+	test("2 x 5 + 3");
+	test("2 + 5 x 3");
 
 	return 0;
 }
