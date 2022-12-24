@@ -1,4 +1,5 @@
 #include "Add.hpp"
+#include "Subtract.hpp"
 #include "Input.hpp"
 #include "Number.hpp"
 #include "color.hpp"
@@ -24,6 +25,11 @@ create_token(Input &exp, TreeNode **node)
 	{
 		exp.incIndex();
 		*node = new Add();
+	}
+	else if (exp.getChar() == '-')
+	{
+		exp.incIndex();
+		*node = new Subtract();
 	}
 	else
 		*node = 0;
@@ -95,6 +101,7 @@ main(int argc, char **argv)
 	test_sum("1 + 2 + 3 + 4");
 	test_sum("1 + 2 + 3 + 4 + 5");
 	test_sum("1 + 2 + 3 + 4 + 5 + 6");
+	test_sum("100 - 5");
 
 	return 0;
 }
