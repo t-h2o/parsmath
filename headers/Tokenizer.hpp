@@ -9,7 +9,7 @@
 class Tokenizer
 {
   public:
-	static void create_token(Input &exp, TreeNode **node);
+	static void create_token(Input &, TreeNode **);
 };
 
 #endif /* TOKENISER_HPP */
