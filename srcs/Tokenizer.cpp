@@ -48,18 +48,36 @@ Tokenizer::generate_tree(Input exp)
 	} while (_nodes.back());
 	_nodes.pop_back();
 
-	_nodes.at(1)->set_left(_nodes.at(0));
-	_nodes.at(1)->set_right(_nodes.at(2));
-
-	index = 3;
-
-	while (index < _nodes.size() && _nodes.at(index)->isOperator() == 1
-		   && _nodes.at(index + 1)->isOperator() == 0)
+	index = 0;
+	while (index < _nodes.size())
 	{
-		_nodes.at(index)->set_left(_nodes.at(index - 2));
-		_nodes.at(index)->set_right(_nodes.at(index + 1));
-		index += 2;
+		Infix *operation = dynamic_cast<Infix *>(_nodes.at(index));
+		if (operation == 0)
+			;
+		else if (operation->getPriority() == 1)
+		{
+			operation->set_left(_nodes.at(index - 1));
+			operation->set_right(_nodes.at(index + 1));
+			_nodes.erase(_nodes.begin() + index-- - 1);
+			_nodes.erase(_nodes.begin() + index + 1);
+		}
+		++index;
 	}
 
-	return _nodes.at(index - 2);
+	index = 0;
+	while (index < _nodes.size())
+	{
+		Infix *operation = dynamic_cast<Infix *>(_nodes.at(index));
+		if (operation == 0)
+			;
+		else if (operation->getPriority() == 0)
+		{
+			operation->set_left(_nodes.at(index - 1));
+			operation->set_right(_nodes.at(index + 1));
+			_nodes.erase(_nodes.begin() + index-- - 1);
+			_nodes.erase(_nodes.begin() + index + 1);
+		}
+		++index;
+	}
+	return _nodes.at(index - 1);
 }
