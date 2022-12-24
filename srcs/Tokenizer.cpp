@@ -1,7 +1,7 @@
 #include "Tokenizer.hpp"
 
 void
-Tokenizer::create_token(Input &exp, TreeNode **node)
+Tokenizer::_create_token(Input &exp, TreeNode **node)
 {
 	int number;
 
@@ -29,4 +29,47 @@ Tokenizer::create_token(Input &exp, TreeNode **node)
 		throw BadExpression();
 	else
 		*node = 0;
+}
+
+void
+Tokenizer::_first(Input &exp, TreeNode **operation)
+{
+	TreeNode *number;
+
+	_create_token(exp, &number);
+	_create_token(exp, operation);
+	(*operation)->set_left(number);
+
+	_create_token(exp, &number);
+	(*operation)->set_right(number);
+}
+
+int
+Tokenizer::_second(Input &exp, TreeNode **child)
+{
+	TreeNode *number;
+	TreeNode *operation;
+
+	_create_token(exp, &operation);
+	if (operation == 0)
+		return 0;
+	_create_token(exp, &number);
+
+	operation->set_left(*child);
+	operation->set_right(number);
+
+	*child = operation;
+	return 1;
+}
+
+TreeNode *
+Tokenizer::generate_tree(Input exp)
+{
+	TreeNode *tree;
+
+	_first(exp, &tree);
+	while (_second(exp, &tree))
+		;
+
+	return tree;
 }

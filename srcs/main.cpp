@@ -8,45 +8,11 @@
 #include <iostream>
 
 static void
-first(Input &exp, TreeNode **operation)
-{
-	TreeNode *number;
-
-	Tokenizer::create_token(exp, &number);
-	Tokenizer::create_token(exp, operation);
-	(*operation)->set_left(number);
-
-	Tokenizer::create_token(exp, &number);
-	(*operation)->set_right(number);
-}
-
-static int
-second(Input &exp, TreeNode **child)
-{
-	TreeNode *number;
-	TreeNode *operation;
-
-	Tokenizer::create_token(exp, &operation);
-	if (operation == 0)
-		return 0;
-	Tokenizer::create_token(exp, &number);
-
-	operation->set_left(*child);
-	operation->set_right(number);
-
-	*child = operation;
-	return 1;
-}
-
-static void
 test(Input exp)
 {
 	section(exp.getInput());
 
-	TreeNode *tree;
-	first(exp, &tree);
-	while (second(exp, &tree))
-		;
+	TreeNode *tree = Tokenizer::generate_tree(exp);
 
 	tree->result();
 	tree->tree();

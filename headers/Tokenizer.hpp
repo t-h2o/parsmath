@@ -9,7 +9,7 @@
 class Tokenizer
 {
   public:
-	static void create_token(Input &, TreeNode **);
+	static TreeNode *generate_tree(Input);
 
 	class BadExpression : std::exception
 	{
@@ -19,6 +19,11 @@ class Tokenizer
 			return "Bad expression";
 		}
 	};
+
+  private:
+	static void _first(Input &, TreeNode **);
+	static int	_second(Input &, TreeNode **);
+	static void _create_token(Input &, TreeNode **);
 };
 
 #endif /* TOKENISER_HPP */
