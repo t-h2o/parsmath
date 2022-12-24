@@ -171,42 +171,62 @@ class Negate {
 skinparam defaultFontName JetBrains Mono
 
 abstract TreeNode {
+  == public ==
   .. Member ..
+  TreeNode(void);
   +~TreeNode(void);
-  .. public ..
-  +{abstract} int eval(void) = 0;
-  +{abstract} void print(void) = 0;
-  +void set_left(int);
-  +void set_right(int);
+  .. virtual ..
+  +{abstract} int	eval(void) = 0;
+  +{abstract} void	print(void) = 0;
+  +{abstract} void	result(void) = 0;
+  .. setter ..
+  +void set_left(int const &);
+  +void set_left(TreeNode *);
+  +void set_right(int const &);
+  +void set_right(TreeNode *);
+  .. getter ..
   +TreeNode &get_left(void);
   +TreeNode &get_right(void);
+  .. exception ..
+  +NodeAlreadyDefine
+  +NullPointerNode
   .. operator << ..
   std::cout << node.eval();
-  .. protected ..
-  TreeNode	*left;
-  TreeNode	*right;
+  == private ==
+  TreeNode	*_left;
+  TreeNode	*_right;
 }
 note right of TreeNode::~TreeNode
   Free left and right tree nodes
 end note
 abstract Infix {
+  == public ==
+  {abstract} char getSymbole(void) const = 0;
 }
 
 class Add {
-  .. public ..
+  == public ==
+  .. Member ..
+  +Add(void);
+  +~Add(void);
+  .. other ..
   +int eval(void);
   +void print(void);
+  +void result(void);
+  +char getSymbole(void) const;
+  .. operator << ..
+  std::cout << node.eval();
 }
 note right of Add::eval
   left->eval() + right->eval()
 end note
 
 class Number {
-  .. public ..
+  == public ==
   +void print(void);
   +void set_number(int);
   +int eval(void);
-  .. private ..
+  == private ==
   int	_number;
 }
 
