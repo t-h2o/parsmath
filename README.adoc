@@ -153,6 +153,9 @@ $ ./parsmath 1 + 2 + 3 + 4 + 5 - 6 - 7 + 9
 
 == Resources
 
+.source code
+* GitHub: https://github.com/t-h2o/parsmath[t-h2o/parsmath]
+
 .wikipedia
 * https://en.wikipedia.org/wiki/LR_parser[LR parser]
 +
