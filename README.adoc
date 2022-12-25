@@ -95,3 +95,10 @@ image:assets/program_class.svg[Class into the program]
 === Parsing
 
 image:assets/parse_token.svg[Parsing token]
+
+== Resources
+
+.wikipedia
+* https://en.wikipedia.org/wiki/LR_parser[LR parser]
++
+LR parser:: Left-to-right, Rightmost derivation in reverse
