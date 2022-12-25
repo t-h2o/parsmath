@@ -59,6 +59,9 @@ Tokenizer::generate_tree(Input expression)
 	} while (_nodes.back());
 	_nodes.pop_back();
 
+	if (_nodes.size() == 0)
+		return 0;
+
 	index = 0;
 	while (index < _nodes.size())
 	{
