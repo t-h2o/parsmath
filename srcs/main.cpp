@@ -30,6 +30,7 @@ main(int argc, char **argv)
 	test("2 + 5 x 3");
 	test("2 + 5 x 3 - 7");
 	test("2 + 5 - 3 x 7");
+	test("2 + 5 - 15 / 7");
 
 	return 0;
 }

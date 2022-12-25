@@ -2,6 +2,7 @@
 #define TOKENISER_HPP
 
 #include "Add.hpp"
+#include "Div.hpp"
 #include "Input.hpp"
 #include "Mult.hpp"
 #include "Number.hpp"

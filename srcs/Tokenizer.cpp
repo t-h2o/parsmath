@@ -31,6 +31,11 @@ Tokenizer::_create_token(Input &expression)
 		expression.incIndex();
 		return new Mult();
 	}
+	else if (expression.getChar() == '/')
+	{
+		expression.incIndex();
+		return new Div();
+	}
 	else if (isalpha(expression.getChar()))
 		throw BadExpression();
 	else
