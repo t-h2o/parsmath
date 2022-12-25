@@ -59,12 +59,6 @@ TreeNode::get_right(void)
 		return *(this->_right);
 }
 
-bool
-TreeNode::isOperator(void) const
-{
-	return this->_isOperator;
-}
-
 void
 TreeNode::tree(void)
 {
@@ -76,13 +70,15 @@ void
 TreeNode::_tree(size_t indent, size_t horiBar)
 {
 	Infix *operation;
+	Infix *childOp;
 
 	operation = dynamic_cast<Infix *>(this);
 
 	if (operation)
 	{
+		childOp = dynamic_cast<Infix *>(&(this->get_left()));
 		std::cout << operation->getSymbole() << " ─┬─ ";
-		if (this->get_left().isOperator())
+		if (childOp)
 		{
 			this->get_left()._tree(indent + 1, horiBar + 1);
 			std::cout << std::endl;

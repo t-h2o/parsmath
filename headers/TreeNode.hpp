@@ -19,7 +19,6 @@ class TreeNode
 
 	TreeNode &get_left(void);
 	TreeNode &get_right(void);
-	bool	  isOperator(void) const;
 
 	void tree(void);
 
@@ -42,9 +41,6 @@ class TreeNode
 			return "Node null pointer";
 		}
 	};
-
-  protected:
-	bool _isOperator;
 
   private:
 	TreeNode *_left;

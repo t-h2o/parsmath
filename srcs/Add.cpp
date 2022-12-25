@@ -1,6 +1,6 @@
 #include "Add.hpp"
 
-Add::Add(void) { this->_isOperator = 1; }
+Add::Add(void) { ; }
 Add::~Add(void) { ; }
 
 int

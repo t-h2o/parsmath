@@ -1,6 +1,6 @@
 #include "Subtract.hpp"
 
-Subtract::Subtract(void) { this->_isOperator = 1; }
+Subtract::Subtract(void) { ; }
 Subtract::~Subtract(void) { ; }
 
 int

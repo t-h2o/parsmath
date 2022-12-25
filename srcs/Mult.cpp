@@ -1,6 +1,6 @@
 #include "Mult.hpp"
 
-Mult::Mult(void) { this->_isOperator = 1; }
+Mult::Mult(void) { ; }
 Mult::~Mult(void) { ; }
 
 int
