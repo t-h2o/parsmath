@@ -42,6 +42,7 @@ Tokenizer::generate_tree(Input expression)
 {
 	std::vector<TreeNode *> _nodes;
 	size_t					index;
+	char					priority;
 
 	do
 	{
@@ -62,36 +63,25 @@ Tokenizer::generate_tree(Input expression)
 	if (_nodes.size() == 0)
 		return 0;
 
-	index = 0;
-	while (index < _nodes.size())
+	priority = 2;
+	while (priority--)
 	{
-		Infix *operation = dynamic_cast<Infix *>(_nodes.at(index));
-		if (operation == 0)
-			;
-		else if (operation->getPriority() == 1)
+		index = 0;
+		while (index < _nodes.size())
 		{
-			operation->set_left(_nodes.at(index - 1));
-			operation->set_right(_nodes.at(index + 1));
-			_nodes.erase(_nodes.begin() + index-- - 1);
-			_nodes.erase(_nodes.begin() + index + 1);
+			Infix *operation = dynamic_cast<Infix *>(_nodes.at(index));
+			if (operation == 0)
+				;
+			else if (operation->getPriority() == priority)
+			{
+				operation->set_left(_nodes.at(index - 1));
+				operation->set_right(_nodes.at(index + 1));
+				_nodes.erase(_nodes.begin() + index-- - 1);
+				_nodes.erase(_nodes.begin() + index + 1);
+			}
+			++index;
 		}
-		++index;
 	}
 
-	index = 0;
-	while (index < _nodes.size())
-	{
-		Infix *operation = dynamic_cast<Infix *>(_nodes.at(index));
-		if (operation == 0)
-			;
-		else if (operation->getPriority() == 0)
-		{
-			operation->set_left(_nodes.at(index - 1));
-			operation->set_right(_nodes.at(index + 1));
-			_nodes.erase(_nodes.begin() + index-- - 1);
-			_nodes.erase(_nodes.begin() + index + 1);
-		}
-		++index;
-	}
 	return _nodes.at(index - 1);
 }
