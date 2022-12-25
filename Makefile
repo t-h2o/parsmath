@@ -21,15 +21,19 @@ SRCD	=	srcs
 
 SRCS	=	$(SRCD)/main.cpp
 SRCS	+=	$(SRCD)/color.cpp
-SRCS	+=	$(SRCD)/Add.cpp
-SRCS	+=	$(SRCD)/Infix.cpp
+
 SRCS	+=	$(SRCD)/Input.cpp
+SRCS	+=	$(SRCD)/Tokenizer.cpp
+
+SRCS	+=	$(SRCD)/TreeNode.cpp
+SRCS	+=	$(SRCD)/Infix.cpp
+
+SRCS	+=	$(SRCD)/Add.cpp
+SRCS	+=	$(SRCD)/Subtract.cpp
 SRCS	+=	$(SRCD)/Mult.cpp
 SRCS	+=	$(SRCD)/Div.cpp
+
 SRCS	+=	$(SRCD)/Number.cpp
-SRCS	+=	$(SRCD)/Subtract.cpp
-SRCS	+=	$(SRCD)/Tokenizer.cpp
-SRCS	+=	$(SRCD)/TreeNode.cpp
 
 
 #	Headers
@@ -37,15 +41,20 @@ SRCS	+=	$(SRCD)/TreeNode.cpp
 INCD	=	headers
 
 INCS	=	$(INCD)/color.hpp
-INCS	+=	$(INCD)/Add.hpp
-INCS	+=	$(INCD)/Infix.hpp
+
 INCS	+=	$(INCD)/Input.hpp
+INCS	+=	$(INCD)/Tokenizer.hpp
+
+INCS	+=	$(INCD)/TreeNode.hpp
+INCS	+=	$(INCD)/Infix.hpp
+
+INCS	+=	$(INCD)/Add.hpp
+INCS	+=	$(INCD)/Subtract.hpp
 INCS	+=	$(INCD)/Mult.hpp
 INCS	+=	$(INCD)/Div.hpp
+
 INCS	+=	$(INCD)/Number.hpp
-INCS	+=	$(INCD)/Subtract.hpp
-INCS	+=	$(INCD)/Tokenizer.hpp
-INCS	+=	$(INCD)/TreeNode.hpp
+
 
 #	Objets
 
