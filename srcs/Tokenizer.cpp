@@ -52,6 +52,8 @@ Tokenizer::generate_tree(Input exp)
 		catch (const Tokenizer::BadExpression &error)
 		{
 			print_exception(error.what());
+			std::cout << "'" << exp.getChar() << "' was the problem"
+					  << std::endl;
 			return 0;
 		}
 	} while (_nodes.back());
