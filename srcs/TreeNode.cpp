@@ -94,7 +94,7 @@ TreeNode::_tree(size_t indent, size_t horiBar)
 					std::cout << "      ";
 			}
 			std::cout << "   └─ ";
-			this->get_right()._tree(indent + 1, horiBar );
+			this->get_right()._tree(indent + 1, horiBar);
 		}
 		else
 		{
@@ -108,7 +108,7 @@ TreeNode::_tree(size_t indent, size_t horiBar)
 					std::cout << "      ";
 			}
 			std::cout << "   └─ ";
-			this->get_left()._tree(indent + 1, horiBar );
+			this->get_left()._tree(indent + 1, horiBar);
 		}
 	}
 	else
