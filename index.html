@@ -458,7 +458,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_parsing">3.2. Parsing</a></li>
 </ul>
 </li>
-<li><a href="#_resources">4. Resources</a></li>
+<li><a href="#_output">4. Output</a></li>
+<li><a href="#_resources">5. Resources</a></li>
 </ul>
 </div>
 </div>
@@ -661,7 +662,65 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_resources">4. Resources</h2>
+<h2 id="_output">4. Output</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ ./parsmath 20 x 5 + 3
+
+((20 x 5) + 3) = 103
++ ─┬─ x ─┬─ 5
+   │     └─ 20
+   └─ 3
+
+$ ./parsmath 2 + 5 x 3
+
+(2 + (5 x 3)) = 17
++ ─┬─ x ─┬─ 3
+   │     └─ 5
+   └─ 2
+
+$ ./parsmath 2 + 5 x 3 - 7
+
+((2 + (5 x 3)) - 7) = 10
+- ─┬─ + ─┬─ x ─┬─ 3
+   │     │     └─ 5
+   │     └─ 2
+   └─ 7
+
+$ ./parsmath 2 + 5 - 3 x 7
+
+((2 + 5) - (3 x 7)) = -14
+- ─┬─ + ─┬─ 5
+   │     └─ 2
+   └─ x ─┬─ 7
+         └─ 3
+
+$ ./parsmath 2 + 5 - 15 / 7
+
+((2 + 5) - (15 / 7)) = 5
+- ─┬─ + ─┬─ 5
+   │     └─ 2
+   └─ / ─┬─ 7
+         └─ 15
+
+$ ./parsmath 1 + 2 + 3 + 4 + 5 - 6 - 7 + 9
+
+(((((((1 + 2) + 3) + 4) + 5) - 6) - 7) + 9) = 11
++ ─┬─ - ─┬─ - ─┬─ + ─┬─ + ─┬─ + ─┬─ + ─┬─ 2
+   │     │     │     │     │     │     └─ 1
+   │     │     │     │     │     └─ 3
+   │     │     │     │     └─ 4
+   │     │     │     └─ 5
+   │     │     └─ 6
+   │     └─ 7
+   └─ 9</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources">5. Resources</h2>
 <div class="sectionbody">
 <div class="ulist">
 <div class="title">wikipedia</div>
