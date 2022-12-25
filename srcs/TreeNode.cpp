@@ -67,6 +67,23 @@ TreeNode::tree(void)
 }
 
 void
+TreeNode::_tree_up_down(TreeNode &up, TreeNode &down, size_t indent,
+						size_t horiBar)
+{
+	up._tree(indent + 1, horiBar + 1);
+	std::cout << std::endl;
+	for (size_t i = 0; i < indent; ++i)
+	{
+		if (i < horiBar)
+			std::cout << "   │  ";
+		else
+			std::cout << "      ";
+	}
+	std::cout << "   └─ ";
+	down._tree(indent + 1, horiBar);
+}
+
+void
 TreeNode::_tree(size_t indent, size_t horiBar)
 {
 	Infix *operation;
@@ -76,36 +93,15 @@ TreeNode::_tree(size_t indent, size_t horiBar)
 
 	if (operation)
 	{
-		childOp = dynamic_cast<Infix *>(&(this->get_left()));
 		std::cout << operation->getSymbole() << " ─┬─ ";
+
+		childOp = dynamic_cast<Infix *>(&(this->get_left()));
 		if (childOp)
-		{
-			this->get_left()._tree(indent + 1, horiBar + 1);
-			std::cout << std::endl;
-			for (size_t i = 0; i < indent; ++i)
-			{
-				if (i < horiBar)
-					std::cout << "   │  ";
-				else
-					std::cout << "      ";
-			}
-			std::cout << "   └─ ";
-			this->get_right()._tree(indent + 1, horiBar);
-		}
+			_tree_up_down(this->get_left(), this->get_right(), indent,
+						  horiBar);
 		else
-		{
-			this->get_right()._tree(indent + 1, horiBar + 1);
-			std::cout << std::endl;
-			for (size_t i = 0; i < indent; ++i)
-			{
-				if (i < horiBar)
-					std::cout << "   │  ";
-				else
-					std::cout << "      ";
-			}
-			std::cout << "   └─ ";
-			this->get_left()._tree(indent + 1, horiBar);
-		}
+			_tree_up_down(this->get_right(), this->get_left(), indent,
+						  horiBar);
 	}
 	else
 	{
