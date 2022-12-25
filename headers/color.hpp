@@ -14,6 +14,6 @@ void title(std::string);
 void section(std::string);
 void message(std::string);
 
-void print_exception(std::exception &);
+void print_exception(char const *);
 
 #endif /* COLOR_HPP */

@@ -25,7 +25,7 @@ message(std::string message)
 }
 
 void
-print_exception(std::exception &e)
+print_exception(char const *errorMsg)
 {
-	std::cout << COL_RED << e.what() << COL_RES << std::endl;
+	std::cout << COL_RED << errorMsg << COL_RES << std::endl;
 }

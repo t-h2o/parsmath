@@ -1,4 +1,5 @@
 #include "Tokenizer.hpp"
+#include "color.hpp"
 
 TreeNode *
 Tokenizer::_create_token(Input &exp)
@@ -50,6 +51,7 @@ Tokenizer::generate_tree(Input exp)
 		}
 		catch (const Tokenizer::BadExpression &error)
 		{
+			print_exception(error.what());
 			return 0;
 		}
 	} while (_nodes.back());

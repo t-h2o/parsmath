@@ -16,6 +16,7 @@ class Tokenizer
 
 	class BadExpression : std::exception
 	{
+	  public:
 		char const *
 		what() const throw()
 		{
