@@ -217,9 +217,6 @@ class Add {
   .. operator << ..
   std::cout << node.eval();
 }
-note right of Add::eval
-  left->eval() + right->eval()
-end note
 
 class Mult {
   == public ==
