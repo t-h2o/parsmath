@@ -235,6 +235,20 @@ class Mult {
   std::cout << node.eval();
 }
 
+class Div {
+  == public ==
+  .. Member ..
+  +Div(void);
+  +~Div(void);
+  .. other ..
+  +int eval(void);
+  +void print(void);
+  +void result(void);
+  +char getSymbole(void) const;
+  .. operator << ..
+  std::cout << node.eval();
+}
+
 class Subtract {
   == public ==
   .. Member ..
@@ -263,6 +277,7 @@ TreeNode <|-- Number
 Infix <|-- Add
 Infix <|-- Subtract
 Infix <|-- Mult
+Infix <|-- Div
 
 @enduml
 ....
