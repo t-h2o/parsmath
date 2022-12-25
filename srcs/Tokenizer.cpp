@@ -2,43 +2,43 @@
 #include "color.hpp"
 
 TreeNode *
-Tokenizer::_create_token(Input &exp)
+Tokenizer::_create_token(Input &expression)
 {
 	int number;
 
-	while (isspace(exp.getChar()))
-		exp.incIndex();
+	while (isspace(expression.getChar()))
+		expression.incIndex();
 
-	if (isdigit(exp.getChar()))
+	if (isdigit(expression.getChar()))
 	{
-		number = exp.getNumber();
-		while (isdigit(exp.getChar()))
-			exp.incIndex();
+		number = expression.getNumber();
+		while (isdigit(expression.getChar()))
+			expression.incIndex();
 		return new Number(number);
 	}
-	else if (exp.getChar() == '+')
+	else if (expression.getChar() == '+')
 	{
-		exp.incIndex();
+		expression.incIndex();
 		return new Add();
 	}
-	else if (exp.getChar() == '-')
+	else if (expression.getChar() == '-')
 	{
-		exp.incIndex();
+		expression.incIndex();
 		return new Subtract();
 	}
-	else if (exp.getChar() == 'x')
+	else if (expression.getChar() == 'x')
 	{
-		exp.incIndex();
+		expression.incIndex();
 		return new Mult();
 	}
-	else if (isalpha(exp.getChar()))
+	else if (isalpha(expression.getChar()))
 		throw BadExpression();
 	else
 		return 0;
 }
 
 TreeNode *
-Tokenizer::generate_tree(Input exp)
+Tokenizer::generate_tree(Input expression)
 {
 	std::vector<TreeNode *> _nodes;
 	size_t					index;
@@ -47,12 +47,12 @@ Tokenizer::generate_tree(Input exp)
 	{
 		try
 		{
-			_nodes.push_back(_create_token(exp));
+			_nodes.push_back(_create_token(expression));
 		}
 		catch (const Tokenizer::BadExpression &error)
 		{
 			print_exception(error.what());
-			std::cout << "'" << exp.getChar() << "' was the problem"
+			std::cout << "'" << expression.getChar() << "' was the problem"
 					  << std::endl;
 			return 0;
 		}

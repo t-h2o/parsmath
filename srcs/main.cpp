@@ -2,11 +2,11 @@
 #include "color.hpp"
 
 static void
-test(Input exp)
+test(Input expression)
 {
-	section(exp.getInput());
+	section(expression.getInput());
 
-	TreeNode *tree = Tokenizer::generate_tree(exp);
+	TreeNode *tree = Tokenizer::generate_tree(expression);
 
 	if (tree == 0)
 		return;
