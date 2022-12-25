@@ -44,7 +44,14 @@ Tokenizer::generate_tree(Input exp)
 
 	do
 	{
-		_nodes.push_back(_create_token(exp));
+		try
+		{
+			_nodes.push_back(_create_token(exp));
+		}
+		catch (const Tokenizer::BadExpression &error)
+		{
+			return 0;
+		}
 	} while (_nodes.back());
 	_nodes.pop_back();
 

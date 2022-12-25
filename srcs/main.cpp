@@ -8,6 +8,8 @@ test(Input exp)
 
 	TreeNode *tree = Tokenizer::generate_tree(exp);
 
+	if (tree == 0)
+		return;
 	tree->result();
 	tree->tree();
 	delete tree;
