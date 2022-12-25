@@ -221,6 +221,34 @@ note right of Add::eval
   left->eval() + right->eval()
 end note
 
+class Mult {
+  == public ==
+  .. Member ..
+  +Mult(void);
+  +~Mult(void);
+  .. other ..
+  +int eval(void);
+  +void print(void);
+  +void result(void);
+  +char getSymbole(void) const;
+  .. operator << ..
+  std::cout << node.eval();
+}
+
+class Subtract {
+  == public ==
+  .. Member ..
+  +Subtract(void);
+  +~Subtract(void);
+  .. other ..
+  +int eval(void);
+  +void print(void);
+  +void result(void);
+  +char getSymbole(void) const;
+  .. operator << ..
+  std::cout << node.eval();
+}
+
 class Number {
   == public ==
   +void print(void);
@@ -233,6 +261,8 @@ class Number {
 TreeNode <|-- Infix
 TreeNode <|-- Number
 Infix <|-- Add
+Infix <|-- Subtract
+Infix <|-- Mult
 
 @enduml
 ....
