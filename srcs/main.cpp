@@ -25,8 +25,8 @@ main(int argc, char **argv)
 		test(argv + 1);
 		return (0);
 	}
-	title("Sum");
-	test("2 x 5 + 3");
+	test("1 + 2 + 3 + 4 + 5 - 6 - 7 + 9");
+	test("20 x 5 + 3");
 	test("2 + 5 x 3");
 	test("2 + 5 x 3 - 7");
 	test("2 + 5 - 3 x 7");
