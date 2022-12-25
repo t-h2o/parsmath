@@ -50,7 +50,7 @@ class TreeNode
 	TreeNode *_left;
 	TreeNode *_right;
 
-	void _tree(size_t);
+	void _tree(size_t, size_t);
 };
 
 std::ostream &operator<<(std::ostream &output, TreeNode &node);

@@ -68,12 +68,12 @@ TreeNode::isOperator(void) const
 void
 TreeNode::tree(void)
 {
-	this->_tree(0);
+	this->_tree(0, 0);
 	std::cout << std::endl;
 }
 
 void
-TreeNode::_tree(size_t indent)
+TreeNode::_tree(size_t indent, size_t horiBar)
 {
 	Infix *operation;
 
@@ -84,26 +84,36 @@ TreeNode::_tree(size_t indent)
 		std::cout << operation->getSymbole() << " ─┬─ ";
 		if (this->get_left().isOperator())
 		{
-			this->get_left()._tree(indent + 1);
+			this->get_left()._tree(indent + 1, horiBar + 1);
 			std::cout << std::endl;
 			for (size_t i = 0; i < indent; ++i)
-				std::cout << "   │  ";
+			{
+				if (i < horiBar)
+					std::cout << "   │  ";
+				else
+					std::cout << "      ";
+			}
 			std::cout << "   └─ ";
-			this->get_right()._tree(indent + 2);
+			this->get_right()._tree(indent + 1, horiBar );
 		}
 		else
 		{
-			this->get_right()._tree(indent + 1);
+			this->get_right()._tree(indent + 1, horiBar + 1);
 			std::cout << std::endl;
 			for (size_t i = 0; i < indent; ++i)
-				std::cout << "   │  ";
+			{
+				if (i < horiBar)
+					std::cout << "   │  ";
+				else
+					std::cout << "      ";
+			}
 			std::cout << "   └─ ";
-			this->get_left()._tree(indent + 2);
+			this->get_left()._tree(indent + 1, horiBar );
 		}
 	}
 	else
 	{
-		std::cout << this->eval();
+		std::cout << this->eval(); // << std::endl;
 	}
 }
 
