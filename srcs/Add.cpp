@@ -19,11 +19,13 @@ Add::result(void)
 void
 Add::print(void)
 {
-	std::cout << "(";
+	if (this->getParenthesis())
+		std::cout << "(";
 	this->get_left().print();
 	std::cout << " + ";
 	this->get_right().print();
-	std::cout << ")";
+	if (this->getParenthesis())
+		std::cout << ")";
 }
 
 char

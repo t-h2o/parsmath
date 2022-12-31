@@ -19,11 +19,13 @@ Mult::result(void)
 void
 Mult::print(void)
 {
-	std::cout << "(";
+	if (this->getParenthesis())
+		std::cout << "(";
 	this->get_left().print();
 	std::cout << " x ";
 	this->get_right().print();
-	std::cout << ")";
+	if (this->getParenthesis())
+		std::cout << ")";
 }
 
 char
