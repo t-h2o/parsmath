@@ -1,4 +1,5 @@
 = Parsing math expression
+:favicon: assets/favicon.png
 :nofooter:
 :sectnums:
 :toc: left
